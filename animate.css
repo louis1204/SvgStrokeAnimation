@@ -1,14 +1,36 @@
 path {
   stroke-dasharray: 1500;
   stroke-dashoffset: 1500;
-  animation: dash 5s linear alternate infinite;
+  animation: dash 5s linear infinite;
 }
+
+svg {
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 1500;
+  animation: pulse 5s linear infinite;
+}
+
 
 @keyframes dash {
   from {
     stroke-dashoffset: 1500;
   }
   to {
-    stroke-dashoffset: 0;
+    stroke-dashoffset: 820;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+  }
+  40% {
+    transform: scale(1) rotate(5deg);
+  }
+  80% {
+    transform: scale(1) rotate(-5deg);
+  }
+  100% {
+    transform: scale(0.9) rotate(0);
   }
 }
